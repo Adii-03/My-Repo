@@ -21,6 +21,8 @@
     <module>webapp</module>
   </modules>
 
+
+
   <distributionManagement>
     <site>
       <id>site-server</id>
@@ -30,7 +32,20 @@
   </distributionManagement>
 
   <build>
-    <plugins>
+   <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+                    <altDeploymentRepository>
+internal.repo::default::http://xtech.pl.s2-eu.capgemini.com/nexus3/repository/HelloWorld1.0/
+                    </altDeploymentRepository>
+                </configuration>
+            </plugin>
+        
+
+
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
